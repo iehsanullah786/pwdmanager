@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.1/phpunit.xsd" backupGlobals="false" bootstrap="vendor/autoload.php" colors="true" processIsolation="false" stopOnFailure="true" cacheDirectory=".phpunit.cache" backupStaticProperties="false">
+  <coverage/>
+  <testsuites>
+    <testsuite name="Controller">
+      <directory suffix=".php">./app/Domains/App/Test/Controller</directory>
+      <directory suffix=".php">./app/Domains/Dashboard/Test/Controller</directory>
+      <directory suffix=".php">./app/Domains/PWA/Test/Controller</directory>
+      <directory suffix=".php">./app/Domains/Tag/Test/Controller</directory>
+      <directory suffix=".php">./app/Domains/Team/Test/Controller</directory>
+      <directory suffix=".php">./app/Domains/User/Test/Controller</directory>
+      <directory suffix=".php">./app/Domains/User/Test/ControllerApi</directory>
+
+      <exclude>./app/Domains/App/Test/Controller/ControllerAbstract.php</exclude>
+      <exclude>./app/Domains/Dashboard/Test/Controller/ControllerAbstract.php</exclude>
+      <exclude>./app/Domains/PWA/Test/Controller/ControllerAbstract.php</exclude>
+      <exclude>./app/Domains/Tag/Test/Controller/ControllerAbstract.php</exclude>
+      <exclude>./app/Domains/Team/Test/Controller/ControllerAbstract.php</exclude>
+      <exclude>./app/Domains/User/Test/Controller/ControllerAbstract.php</exclude>
+      <exclude>./app/Domains/User/Test/ControllerApi/ControllerApiAbstract.php</exclude>
+    </testsuite>
+
+    <testsuite name="Unit">
+      <directory suffix=".php">./app/Domains/Tag/Test/Unit</directory>
+      <exclude>./app/Domains/Tag/Test/Unit/UnitAbstract.php</exclude>
+    </testsuite>
+  </testsuites>
+  <php>
+    <server name="APP_DEBUG" value="0"/>
+    <server name="APP_ENV" value="testing"/>
+    <server name="APP_LOCALE" value="es"/>
+    <server name="AUTH_API_SECRET_ENABLED" value="true"/>
+    <server name="AUTH_CERTIFICATE_ENABLED" value="true"/>
+    <server name="AUTH_CHECK_ALLOWED" value="3"/>
+    <server name="AUTH_COUNTRY_ENABLED" value="false"/>
+    <server name="AUTH_TFA_ENABLED" value="true"/>
+    <server name="BCRYPT_ROUNDS" value="4"/>
+    <server name="CACHE_DRIVER" value="array"/>
+    <server name="DB_CONNECTION" value="test"/>
+    <server name="DB_DATABASE" value=":memory:"/>
+    <server name="DEBUGBAR_ENABLED" value="0"/>
+    <server name="MAIL_DRIVER" value="array"/>
+    <server name="QUEUE_CONNECTION" value="sync"/>
+    <server name="SESSION_DRIVER" value="array"/>
+    <server name="TEST_ENABLED" value="1"/>
+  </php>
+  <source>
+    <include>
+      <directory suffix=".php">./app</directory>
+    </include>
+  </source>
+</phpunit>
